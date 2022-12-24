@@ -1,0 +1,7 @@
+#Source
+gsutil cp "gs://firecloud-tcga-open-access/tutorial/reference/whole_exome_illumina_coding_v1_plus_10bp_padding_minus_mito.Homo_sapiens_assembly19.targets.interval_list" .
+gsutil cp "gs://firecloud-tcga-open-access/tutorial/reference/whole_exome_agilent_1.1_refseq_plus_3_boosters.Homo_sapiens_assembly19.targets.interval_list" .
+
+#add "chr" to chromosome
+grep -v "@" whole_exome_agilent_1.1_refseq_plus_3_boosters.Homo_sapiens_assembly19.targets.interval_list | awk '{print "chr"$0}' > whole_exome_agilent_1.1_refseq_plus_3_boosters.Homo_sapiens_assembly19.targets.interval_list.2
+grep -v "@" whole_exome_illumina_coding_v1_plus_10bp_padding_minus_mito.Homo_sapiens_assembly19.targets.interval_list | awk '{print "chr"$0}' > whole_exome_illumina_coding_v1_plus_10bp_padding_minus_mito.Homo_sapiens_assembly19.targets.interval_list.2
